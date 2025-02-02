@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
 import 'package:maxim/personalization/personalization_page.dart';
 import 'package:maxim/profile/profile_provider.dart';
+import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -36,11 +37,7 @@ class _ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           AppStringResources.profile,
-          style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF262626),
-          ),
+          style: AppTextStyles.appBarTextStyle,
         ),
       ),
       leading: IconButton(
@@ -57,11 +54,7 @@ class _ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
               },
               child: const Text(
                 AppStringResources.edit,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xFF0062FF),
-                ),
+                style: AppTextStyles.editTextStyle,
               ),
             ),
           ),
@@ -226,7 +219,7 @@ class _ProfileInfo extends StatelessWidget {
         children: <Widget>[
           Text(
             username,
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+            style: AppTextStyles.boldTextStyle,
             textAlign: TextAlign.start,
           ),
           const SizedBox(
@@ -234,7 +227,7 @@ class _ProfileInfo extends StatelessWidget {
           ),
           Text(
             phoneNumber.toKazakhstanPhoneFormat(),
-            style: const TextStyle(fontSize: 16),
+            style: AppTextStyles.phoneNumberTextStyle,
             textAlign: TextAlign.start,
           )
         ],
@@ -253,10 +246,7 @@ class _Status extends StatelessWidget {
     return Text(
       status,
       textAlign: TextAlign.end,
-      style: const TextStyle(
-        color: Color.fromARGB(100, 86, 86, 86),
-        fontSize: 16,
-      ),
+      style: AppTextStyles.statusTextStyle,
     );
   }
 }
@@ -339,10 +329,7 @@ class _ProfileButton extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 text,
-                style: const TextStyle(
-                  color: Color(0xFF595959),
-                  fontSize: 16,
-                ),
+                style: AppTextStyles.mainTextStyle,
               ),
             ),
           ),

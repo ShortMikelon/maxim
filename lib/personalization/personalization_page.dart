@@ -4,6 +4,7 @@ import 'package:maxim/change_name/change_name_bottom_sheet.dart';
 import 'package:maxim/default_names.dart';
 import 'package:maxim/name_type.dart';
 import 'package:maxim/personalization/personalization_provider.dart';
+import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
 
 class PersonalizationPage extends StatelessWidget {
@@ -33,11 +34,7 @@ class _PersonalizationAppBar extends StatelessWidget
         alignment: Alignment.centerLeft,
         child: Text(
           AppStringResources.personalization,
-          style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF262626),
-          ),
+          style: AppTextStyles.appBarTextStyle,
         ),
       ),
       leading: IconButton(
@@ -62,7 +59,7 @@ class _PersonalizationBody extends StatelessWidget {
         children: <Widget>[
           const Text(
             AppStringResources.howDoYouLikeIt,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: AppTextStyles.boldTextStyle,
           ),
           const SizedBox(height: 8),
           _PersonalizationButton(
@@ -166,20 +163,12 @@ class _PersonalizationButton extends StatelessWidget {
         children: <Widget>[
           Text(
             text,
-            style: const TextStyle(
-              color: Color(0xFF595959),
-              fontWeight: FontWeight.w400,
-              fontSize: 16,
-            ),
+            style: AppTextStyles.mainTextStyle,
           ),
           Text(
             value,
             textAlign: TextAlign.start,
-            style: const TextStyle(
-              color: Color(0xFF595959),
-              fontWeight: FontWeight.w400,
-              fontSize: 12,
-            ),
+            style: AppTextStyles.hintTextStyle,
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maxim/change_client_name_constants.dart';
 import 'package:maxim/change_name/change_name_provider.dart';
 import 'package:maxim/name_type.dart';
+import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
 
 void showChangeNameBottomSheet({
@@ -107,11 +108,7 @@ class _AppBottomSheetHeader extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               title,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 17,
-              ),
+              style: AppTextStyles.bottomSheetTopBarTextStyle,
             ),
           ),
         )
@@ -195,9 +192,7 @@ class _AppTextField extends StatelessWidget {
         color: Colors.white,
       ),
       child: TextField(
-        style: const TextStyle(
-          fontSize: 16, color: ChangeClientNameConstants.darkGray,
-        ),
+        style: AppTextStyles.blackTextStyle,
         onSubmitted: (value) {
           onSubmit(value);
 
@@ -209,9 +204,7 @@ class _AppTextField extends StatelessWidget {
           contentPadding: const EdgeInsets.all(10),
           border: InputBorder.none,
           labelText: labelName,
-          labelStyle: const TextStyle(
-            color: ChangeClientNameConstants.darkGray,
-          ),
+          labelStyle: AppTextStyles.hintTextStyle,
           filled: true,
           fillColor: Colors.white,
         ),
@@ -266,7 +259,7 @@ class _AppRadioButton extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               text,
-              style: const TextStyle(color: ChangeClientNameConstants.darkGray, fontSize: 16),
+              style: AppTextStyles.bottomSheetMainTextStyle,
             )
           ],
         ),
