@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:maxim/app_string_resources.dart';
+import 'package:maxim/app_color_resources.dart';
 import 'package:maxim/presentations/change_password/change_password_model.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
@@ -101,12 +102,12 @@ class _ChangePasswordBody extends StatelessWidget {
                       child: Container(
                         constraints: const BoxConstraints(minHeight: 70),
                         decoration: BoxDecoration(
-                          color: const Color(0xDDD0343C),
+                          color: AppColorResources.errorRed,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         alignment: Alignment.center,
                         child: Text(model.errorMessage,
-                            style: const TextStyle(color: Colors.white)),
+                            style: const TextStyle(color: AppColorResources.white)),
                       ),
                     ),
                     Visibility(
@@ -114,7 +115,7 @@ class _ChangePasswordBody extends StatelessWidget {
                       child: const SizedBox(height: 8),
                     ),
                     AppButton(
-                      background: const Color(0xFF0062FF),
+                      background: AppColorResources.blue,
                       onPressed: model.saveButtonIsEnabled ? model.save : null,
                       child: Align(
                         alignment: Alignment.center,
@@ -122,8 +123,8 @@ class _ChangePasswordBody extends StatelessWidget {
                           AppStringResources.save,
                           style: TextStyle(
                             color: model.saveButtonIsEnabled
-                                ? Colors.white
-                                : const Color(0xFF8C8C8C),
+                                ? AppColorResources.white
+                                : AppColorResources.lightGray,
                           ),
                         ),
                       ),
@@ -153,11 +154,11 @@ class _ChangePasswordField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final borderColor =
-        helper.focusNode.hasFocus ? const Color(0xFF0062FF) : Colors.white;
+        helper.focusNode.hasFocus ? AppColorResources.blue : AppColorResources.white;
 
     final visibilityIcon = helper.isVisible
-        ? const Icon(CupertinoIcons.eye_fill, color: Colors.black)
-        : const Icon(CupertinoIcons.eye_slash_fill, color: Color(0xFF8C8C8C));
+        ? const Icon(CupertinoIcons.eye_fill, color: AppColorResources.black)
+        : const Icon(CupertinoIcons.eye_slash_fill, color: AppColorResources.lightGray);
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -165,7 +166,7 @@ class _ChangePasswordField extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: borderColor, width: 2),
         borderRadius: BorderRadius.circular(8),
-        color: Colors.white,
+        color: AppColorResources.white,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,7 +175,7 @@ class _ChangePasswordField extends StatelessWidget {
             child: TextField(
               cursorHeight: 20,
               cursorWidth: 1,
-              cursorColor: const Color(0xFF0062FF),
+              cursorColor: AppColorResources.lightGray,
               controller: helper.controller,
               focusNode: helper.focusNode,
               obscureText: !helper.isVisible,
@@ -186,7 +187,7 @@ class _ChangePasswordField extends StatelessWidget {
                 labelText: label,
                 labelStyle: AppTextStyles.hintTextStyle,
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: AppColorResources.white,
               ),
               style: AppTextStyles.blackTextStyle,
             ),

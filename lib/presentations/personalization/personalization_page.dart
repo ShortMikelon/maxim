@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
+import 'package:maxim/app_color_resources.dart';
 import 'package:maxim/presentations/change_name/change_name_bottom_sheet.dart';
 import 'package:maxim/presentations/change_name/default_names.dart';
 import 'package:maxim/presentations/change_name/name_type.dart';
@@ -127,7 +128,7 @@ class _PersonalizationButton extends StatelessWidget {
       onPressed: onPressed,
       minHeight: 56,
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      background: Colors.white,
+      background: AppColorResources.white,
       child: Row(
         children: <Widget>[
           _buttonText(),
@@ -138,7 +139,7 @@ class _PersonalizationButton extends StatelessWidget {
               child: Icon(
                 Icons.keyboard_arrow_down,
                 size: 24,
-                color: Color(0xFF8C8C8C),
+                color: AppColorResources.blue,
               ),
             ),
           )

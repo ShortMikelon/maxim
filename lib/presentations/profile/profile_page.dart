@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
+import 'package:maxim/app_color_resources.dart';
 import 'package:maxim/presentations/account_settings/account_settings_page.dart';
 import 'package:maxim/presentations/personalization/personalization_page.dart';
 import 'package:maxim/presentations/profile/profile_provider.dart';
@@ -118,7 +119,7 @@ class _PendingDisplay extends StatelessWidget {
             width: 64,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
+              color: AppColorResources.white,
             ),
           ),
         ),
@@ -135,7 +136,7 @@ class _PendingDisplay extends StatelessWidget {
                     width: 137,
                     height: 20,
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: AppColorResources.white,
                     ),
                   ),
                 ),
@@ -145,7 +146,7 @@ class _PendingDisplay extends StatelessWidget {
                     width: 123,
                     height: 20,
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: AppColorResources.white,
                     ),
                   ),
                 ),
@@ -157,7 +158,7 @@ class _PendingDisplay extends StatelessWidget {
             width: 57,
             height: 10,
             decoration: const BoxDecoration(
-              color: Colors.white,
+              color: AppColorResources.white,
             ),
           ),
         )
@@ -195,8 +196,8 @@ class _ClientIcon extends StatelessWidget {
   }
 
   Color get _color => HSLColor.fromColor(text.toColor()).lightness < 0.8
-      ? Colors.white
-      : Colors.black87;
+      ? AppColorResources.white
+      : AppColorResources.black87;
 
   double get _fontSize => 45 / (text.initials().length == 2 ? 2.5 : 1.8);
 }
@@ -322,7 +323,7 @@ class _ProfileButton extends StatelessWidget {
       onPressed: onPressed,
       minHeight: 56,
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      background: (Colors.white),
+      background: AppColorResources.white,
       child: Row(
         children: <Widget>[
           Expanded(
@@ -341,7 +342,7 @@ class _ProfileButton extends StatelessWidget {
               child: Icon(
                 Icons.chevron_right,
                 size: 24,
-                color: Color(0xFF8C8C8C),
+                color: AppColorResources.lightGray,
               ),
             ),
           )

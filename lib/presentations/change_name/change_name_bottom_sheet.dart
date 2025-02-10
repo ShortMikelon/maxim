@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
-import 'package:maxim/change_client_name_constants.dart';
+import 'package:maxim/app_color_resources.dart';
 import 'package:maxim/presentations/change_name/change_name_provider.dart';
 import 'package:maxim/presentations/change_name/name_type.dart';
 import 'package:maxim/widgets/app_button.dart';
@@ -98,7 +98,7 @@ class _AppBottomSheetHeader extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: IconButton(
             icon: const Icon(Icons.close),
-            color: Colors.black,
+            color: AppColorResources.black,
             onPressed: () {
               Navigator.pop(context);
             },
@@ -140,13 +140,13 @@ class _AppSaveButton extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8, right: 16, left: 16),
       child: AppButton(
         onPressed: onPressedWithPopBack,
-        background: ChangeClientNameConstants.blue,
-        disabledBackground: ChangeClientNameConstants.spitsbergenBlue,
+        background: AppColorResources.blue,
+        disabledBackground: AppColorResources.spitsbergenBlue,
         child: Text(
           AppStringResources.save,
           style: TextStyle(
             color:
-            isEnabled ? Colors.white : ChangeClientNameConstants.lightGray,
+            isEnabled ? AppColorResources.white : AppColorResources.lightGray,
           ),
         ),
       ),
@@ -174,9 +174,9 @@ class _AppTextField extends StatelessWidget {
         horizontal: 16,
       ),
       decoration: BoxDecoration(
-        border: Border.all(color: ChangeClientNameConstants.blue, width: 2.0),
+        border: Border.all(color: AppColorResources.blue, width: 2.0),
         borderRadius: BorderRadius.circular(8),
-        color: Colors.white,
+        color: AppColorResources.white,
       ),
       child: TextField(
         style: AppTextStyles.blackTextStyle,
@@ -186,14 +186,14 @@ class _AppTextField extends StatelessWidget {
           Navigator.pop(context);
         },
         controller: textEditingController,
-        cursorColor: ChangeClientNameConstants.blue,
+        cursorColor: AppColorResources.blue,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(10),
           border: InputBorder.none,
           labelText: labelName,
           labelStyle: AppTextStyles.hintTextStyle,
           filled: true,
-          fillColor: Colors.white,
+          fillColor: AppColorResources.white,
         ),
         keyboardType: TextInputType.text,
       ),
@@ -230,15 +230,15 @@ class _AppRadioButton extends StatelessWidget {
               width: 16,
               height: 16,
               decoration: BoxDecoration(
-                color: isSelected ? ChangeClientNameConstants.lightBlue : Colors.white,
-                border: Border.all(color: ChangeClientNameConstants.lightGray20),
+                color: isSelected ? AppColorResources.lightBlue : AppColorResources.white,
+                border: Border.all(color: AppColorResources.lightGray20),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(2),
               ),
               child: isSelected
                   ? const Icon(
                 Icons.check,
-                color: Colors.white,
+                color: AppColorResources.white,
                 size: 12,
               )
                   : null,

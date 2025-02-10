@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
+import 'package:maxim/app_color_resources.dart';
 import 'package:maxim/presentations/change_password/change_password_page.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_shimmer.dart';
@@ -77,7 +78,7 @@ class _AccountSettingsPendingBody extends StatelessWidget {
             child: Container(
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColorResources.white,
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
@@ -87,7 +88,7 @@ class _AccountSettingsPendingBody extends StatelessWidget {
             child: Container(
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColorResources.white,
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
@@ -97,7 +98,7 @@ class _AccountSettingsPendingBody extends StatelessWidget {
             child: Container(
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColorResources.white,
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
@@ -107,7 +108,7 @@ class _AccountSettingsPendingBody extends StatelessWidget {
             child: Container(
               height: 56,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColorResources.white,
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
@@ -117,7 +118,7 @@ class _AccountSettingsPendingBody extends StatelessWidget {
           child: Container(
             height: 56,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColorResources.white,
               borderRadius: BorderRadius.circular(8),
             ),
           ),
@@ -179,11 +180,11 @@ class _AccountSettingsDisplayBody extends StatelessWidget {
           ],
         ),
         AppButton(
-          background: const Color(0xFF0062FF),
+          background: AppColorResources.blue,
           onPressed: onSaveButtonPressed,
           child: const Align(
             alignment: Alignment.center,
-            child: Text(AppStringResources.save, style: TextStyle(color: Colors.white)),
+            child: Text(AppStringResources.save, style: TextStyle(color: AppColorResources.white)),
           ),
         ),
       ],
@@ -207,19 +208,19 @@ class _AccountSettingsInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final borderColor =
-        focusNode.hasFocus ? const Color(0xFF0062FF) : Colors.white;
+        focusNode.hasFocus ? AppColorResources.blue : AppColorResources.white;
     return Container(
       height: 56,
       padding: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: borderColor, width: 2),
-        color: Colors.white,
+        color: AppColorResources.white,
       ),
       child: TextField(
         cursorHeight: 20,
         cursorWidth: 1,
-        cursorColor: const Color(0xFF0062FF),
+        cursorColor: AppColorResources.blue,
         keyboardType: keyboardType,
         controller: controller,
         focusNode: focusNode,
@@ -229,11 +230,11 @@ class _AccountSettingsInputField extends StatelessWidget {
           labelText: label,
           labelStyle: AppTextStyles.hintTextStyle,
           filled: true,
-          fillColor: Colors.white,
+          fillColor: AppColorResources.white,
           suffixIcon: const Icon(
             Icons.border_color,
             size: 18.75,
-            color: Color(0xFF8C8C8C),
+            color: AppColorResources.lightGray,
           ),
         ),
         style: AppTextStyles.blackTextStyle,
@@ -251,7 +252,7 @@ class _AccountSettingsPasswordButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppButton(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      background: Colors.white,
+      background: AppColorResources.white,
       onPressed: onPressed,
       child: const Align(
         alignment: Alignment.center,
@@ -263,7 +264,7 @@ class _AccountSettingsPasswordButton extends StatelessWidget {
             Icon(
               Icons.arrow_forward_ios,
               size: 17,
-              color: Color(0xFF8C8C8C),
+              color: AppColorResources.lightGray,
             ),
           ],
         ),
@@ -283,7 +284,7 @@ class _AccountSettingsProfessionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppButton(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      background: Colors.white,
+      background: AppColorResources.white,
       child: Row(
         children: <Widget>[
           Expanded(
@@ -298,7 +299,7 @@ class _AccountSettingsProfessionButton extends StatelessWidget {
           const Icon(
             Icons.arrow_forward_ios,
             size: 17,
-            color: Color(0xFF8C8C8C),
+            color: AppColorResources.lightGray,
           ),
         ],
       ),
