@@ -22,6 +22,7 @@ class PersonalizationPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: _PersonalizationBody(),
         ),
+        backgroundColor: AppColorResources.mainBackgroundColor,
       ),
     );
   }

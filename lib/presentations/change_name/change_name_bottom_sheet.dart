@@ -17,6 +17,7 @@ void showChangeNameBottomSheet({
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
+    backgroundColor: AppColorResources.mainBackgroundColor,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         topLeft: Radius.circular(16),

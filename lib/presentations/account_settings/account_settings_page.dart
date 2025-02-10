@@ -18,6 +18,7 @@ class AccountSettingsPage extends StatelessWidget {
       appBar: _AccountSettingsAppBar(),
       body: _AccountSettingsBody(),
       resizeToAvoidBottomInset: false,
+      backgroundColor: AppColorResources.mainBackgroundColor,
     );
   }
 }

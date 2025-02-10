@@ -23,6 +23,7 @@ class ChangePasswordPage extends StatelessWidget {
         ),
       ),
       body: _ChangePasswordBody(),
+      backgroundColor: AppColorResources.mainBackgroundColor,
     );
   }
 }

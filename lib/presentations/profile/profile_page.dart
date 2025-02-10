@@ -16,6 +16,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _ProfileAppBar(),
+      backgroundColor: AppColorResources.mainBackgroundColor,
       body: ChangeNotifierProvider(
         create: (context) => ProfileProvider(),
         child: SingleChildScrollView(
