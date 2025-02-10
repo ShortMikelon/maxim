@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:maxim/account_settings/account_settings_page.dart';
 import 'package:maxim/app_string_resources.dart';
 import 'package:maxim/personalization/personalization_page.dart';
 import 'package:maxim/profile/profile_provider.dart';
+import 'package:maxim/widgets/app_shimmer.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
-import 'package:shimmer/shimmer.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -110,7 +111,7 @@ class _PendingDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        _ProfileShimmer(
+        AppShimmer(
           child: Container(
             height: 64,
             width: 64,
@@ -128,7 +129,7 @@ class _PendingDisplay extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                _ProfileShimmer(
+                AppShimmer(
                   child: Container(
                     width: 137,
                     height: 20,
@@ -138,7 +139,7 @@ class _PendingDisplay extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                _ProfileShimmer(
+                AppShimmer(
                   child: Container(
                     width: 123,
                     height: 20,
@@ -150,7 +151,7 @@ class _PendingDisplay extends StatelessWidget {
               ],
             )),
         const SizedBox(width: 16),
-        _ProfileShimmer(
+        AppShimmer(
           child: Container(
             width: 57,
             height: 10,
@@ -260,7 +261,14 @@ class _ProfileBody extends StatelessWidget {
         children: <Widget>[
           _ProfileButton(
             text: AppStringResources.accountSettings,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AccountSettingsPage()
+                )
+              );
+            },
           ),
           const SizedBox(height: 8),
           _ProfileButton(
@@ -269,9 +277,11 @@ class _ProfileBody extends StatelessWidget {
               // TODO тут находится навигация
 
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const PersonalizationPage()));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PersonalizationPage(),
+                ),
+              );
             },
           ),
           const SizedBox(height: 8),
@@ -346,26 +356,6 @@ class _ProfileButton extends StatelessWidget {
           )
         ],
       ),
-    );
-  }
-}
-
-class _ProfileShimmer extends StatelessWidget {
-  final Widget child;
-  final Color baseColor = Colors.grey.shade300!;
-  final Color highlightColor = Colors.grey.shade100!;
-
-  _ProfileShimmer({
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Shimmer.fromColors(
-      period: const Duration(milliseconds: 500),
-      baseColor: baseColor,
-      highlightColor: highlightColor,
-      child: child,
     );
   }
 }
