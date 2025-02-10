@@ -3,6 +3,7 @@ import 'package:maxim/account_settings/account_settings_page.dart';
 import 'package:maxim/app_string_resources.dart';
 import 'package:maxim/personalization/personalization_page.dart';
 import 'package:maxim/profile/profile_provider.dart';
+import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_shimmer.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
@@ -96,7 +97,7 @@ class _ProfileWithDataDisplay extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        _ClientIcon(text: state.username),
+        _ClientIcon(state.username),
         const SizedBox(width: 16),
         _ProfileInfo(username: state.username, phoneNumber: state.phoneNumber),
         const SizedBox(width: 16),
@@ -167,9 +168,8 @@ class _PendingDisplay extends StatelessWidget {
 
 class _ClientIcon extends StatelessWidget {
   final String text;
-  final Color? backgroundColor;
 
-  const _ClientIcon({required this.text, this.backgroundColor});
+  const _ClientIcon(this.text);
 
   @override
   Widget build(BuildContext context) {
@@ -195,7 +195,7 @@ class _ClientIcon extends StatelessWidget {
   }
 
   Color get _color =>
-      HSLColor.fromColor(backgroundColor ?? text.toColor()).lightness < 0.8
+      HSLColor.fromColor(text.toColor()).lightness < 0.8
           ? Colors.white
           : Colors.black87;
 
@@ -263,11 +263,9 @@ class _ProfileBody extends StatelessWidget {
             text: AppStringResources.accountSettings,
             onPressed: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AccountSettingsPage()
-                )
-              );
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AccountSettingsPage()));
             },
           ),
           const SizedBox(height: 8),
@@ -317,21 +315,11 @@ class _ProfileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return AppButton(
       onPressed: onPressed,
-      style: ButtonStyle(
-        fixedSize: WidgetStateProperty.all<Size>(const Size(343, 56)),
-        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-          const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        ),
-        elevation: WidgetStateProperty.all<double>(0),
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.white),
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-        ),
-      ),
+      minHeight: 56,
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      background: (Colors.white),
       child: Row(
         children: <Widget>[
           Expanded(

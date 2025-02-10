@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
 import 'package:maxim/change_name/change_name_bottom_sheet.dart';
-import 'package:maxim/default_names.dart';
-import 'package:maxim/name_type.dart';
+import 'package:maxim/change_name/default_names.dart';
+import 'package:maxim/change_name/name_type.dart';
 import 'package:maxim/personalization/personalization_provider.dart';
+import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
 
@@ -122,21 +123,11 @@ class _PersonalizationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return AppButton(
       onPressed: onPressed,
-      style: ButtonStyle(
-        fixedSize: WidgetStateProperty.all<Size>(const Size(343, 56)),
-        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-          const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        ),
-        elevation: WidgetStateProperty.all<double>(0),
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.white),
-        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-        ),
-      ),
+      minHeight: 56,
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      background: Colors.white,
       child: Row(
         children: <Widget>[
           _buttonText(),

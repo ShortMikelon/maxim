@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/change_client_name_constants.dart';
 import 'package:maxim/change_name/change_name_provider.dart';
-import 'package:maxim/name_type.dart';
+import 'package:maxim/change_name/name_type.dart';
+import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';
 
@@ -136,25 +137,10 @@ class _AppSaveButton extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 8, right: 16, left: 16),
-      child: ElevatedButton(
+      child: AppButton(
         onPressed: onPressedWithPopBack,
-        style: ElevatedButton.styleFrom().copyWith(
-          minimumSize: WidgetStateProperty.all<Size>(const Size.fromHeight(56)),
-          backgroundColor: WidgetStateProperty.resolveWith<Color?>(
-                (Set<WidgetState> states) {
-              if (states.contains(WidgetState.disabled)) {
-                return ChangeClientNameConstants.spitsbergenBlue;
-              }
-
-              return ChangeClientNameConstants.blue;
-            },
-          ),
-          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-        ),
+        background: ChangeClientNameConstants.blue,
+        disabledBackground: ChangeClientNameConstants.spitsbergenBlue,
         child: Text(
           'Сохранить',
           style: TextStyle(
