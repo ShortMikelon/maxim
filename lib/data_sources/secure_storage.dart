@@ -43,24 +43,44 @@ class SecureStorage {
     await _storage.write(key: _phoneNumberKey, value: phoneNumber);
   }
 
-  Future<String?> getClientName() async {
-    return await _storage.read(key: _clientNameKey);
+  Future<void> saveLogin(String newLogin) async {
+    await _storage.write(key: _loginKey, value: newLogin);
   }
 
-  Future<String?> getAdminName() async {
-    return await _storage.read(key: _adminNameKey);
+  Future<void> saveProfession(String newProfession) async {
+    await _storage.write(key: _professionKey, value: newProfession);
   }
 
-  Future<String?> getEventName() async {
-    return await _storage.read(key: _eventNameKey);
+  Future<String?> getClientName() {
+    return _storage.read(key: _clientNameKey);
   }
 
-  Future<String?> getUsername() async {
-    return await _storage.read(key: _usernameKey);
+  Future<String?> getAdminName() {
+    return _storage.read(key: _adminNameKey);
   }
 
-  Future<String?> getPhoneNumber() async {
-    return await _storage.read(key: _phoneNumberKey);
+  Future<String?> getEventName() {
+    return _storage.read(key: _eventNameKey);
+  }
+
+  Future<String?> getUsername() {
+    return _storage.read(key: _usernameKey);
+  }
+
+  Future<String?> getPhoneNumber() {
+    return _storage.read(key: _phoneNumberKey);
+  }
+
+  Future<String?> fetchLogin()  {
+    return _storage.read(key: _loginKey);
+  }
+
+  Future<String?> fetchPassword() {
+    return _storage.read(key: _passwordKey);
+  }
+
+  Future<String?> fetchProfession() {
+    return _storage.read(key: _professionKey);
   }
 
   void dispose() {
@@ -74,4 +94,7 @@ class SecureStorage {
   static const _adminNameKey = 'adminName';
   static const _eventNameKey = 'eventName';
   static const _phoneNumberKey = 'phoneNumber';
+  static const _loginKey = 'login';
+  static const _professionKey = 'profession';
+  static const _passwordKey = 'password';
 }

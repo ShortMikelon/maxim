@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:maxim/secure_storage/secure_storage.dart';
+import 'package:maxim/data_sources/secure_storage.dart';
 
 final class ProfileProvider with ChangeNotifier {
   final SecureStorage _storage = SecureStorage();

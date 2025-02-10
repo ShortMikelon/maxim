@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:maxim/secure_storage/secure_storage.dart';
+import 'package:maxim/data_sources/secure_storage.dart';
 
 class PersonalizationProvider with ChangeNotifier {
   final _secureStorage = SecureStorage();
