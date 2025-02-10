@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
-import 'package:maxim/change_name/change_name_bottom_sheet.dart';
-import 'package:maxim/change_name/default_names.dart';
-import 'package:maxim/change_name/name_type.dart';
-import 'package:maxim/personalization/personalization_provider.dart';
+import 'package:maxim/presentations/change_name/change_name_bottom_sheet.dart';
+import 'package:maxim/presentations/change_name/default_names.dart';
+import 'package:maxim/presentations/change_name/name_type.dart';
+import 'package:maxim/presentations/personalization/personalization_provider.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';

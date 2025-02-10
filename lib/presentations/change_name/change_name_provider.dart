@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maxim/change_name/default_names.dart';
-import 'package:maxim/change_name/name_type.dart';
+
 import 'package:maxim/data_sources/secure_storage.dart';
+import 'package:maxim/presentations/change_name/default_names.dart';
+import 'package:maxim/presentations/change_name/name_type.dart';
 
 final class ChangeNameProvider with ChangeNotifier {
   final secureStorage = SecureStorage();

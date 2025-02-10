@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/app_string_resources.dart';
-import 'package:maxim/change_password/change_password_page.dart';
+import 'package:maxim/presentations/change_password/change_password_page.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_shimmer.dart';
 import 'package:maxim/widgets/app_text_styles.dart';

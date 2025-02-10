@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:maxim/profile/profile_page.dart';
+import 'package:maxim/presentations/profile/profile_page.dart';
 
 void main() {
   runApp(const MyApp());

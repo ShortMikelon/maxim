@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maxim/change_client_name_constants.dart';
-import 'package:maxim/change_name/change_name_provider.dart';
-import 'package:maxim/change_name/name_type.dart';
+import 'package:maxim/presentations/change_name/change_name_provider.dart';
+import 'package:maxim/presentations/change_name/name_type.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
 import 'package:provider/provider.dart';

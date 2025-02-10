@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maxim/account_settings/account_settings_page.dart';
 import 'package:maxim/app_string_resources.dart';
-import 'package:maxim/personalization/personalization_page.dart';
-import 'package:maxim/profile/profile_provider.dart';
+import 'package:maxim/presentations/account_settings/account_settings_page.dart';
+import 'package:maxim/presentations/personalization/personalization_page.dart';
+import 'package:maxim/presentations/profile/profile_provider.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_shimmer.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
@@ -194,10 +194,9 @@ class _ClientIcon extends StatelessWidget {
     );
   }
 
-  Color get _color =>
-      HSLColor.fromColor(text.toColor()).lightness < 0.8
-          ? Colors.white
-          : Colors.black87;
+  Color get _color => HSLColor.fromColor(text.toColor()).lightness < 0.8
+      ? Colors.white
+      : Colors.black87;
 
   double get _fontSize => 45 / (text.initials().length == 2 ? 2.5 : 1.8);
 }
@@ -262,10 +261,14 @@ class _ProfileBody extends StatelessWidget {
           _ProfileButton(
             text: AppStringResources.accountSettings,
             onPressed: () {
+              // TODO
+
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AccountSettingsPage()));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AccountSettingsPage(),
+                ),
+              );
             },
           ),
           const SizedBox(height: 8),
