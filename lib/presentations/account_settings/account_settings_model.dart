@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:maxim/data_sources/remote_storage.dart';
 import 'package:maxim/data_sources/secure_storage.dart';
@@ -62,8 +60,6 @@ class AccountSettingsModel with ChangeNotifier {
   void _formatPhoneNumber() {
     String text = phoneNumberController.text.replaceAll(RegExp(r'\D'), '');
 
-    log('format phone number called. text: $text, phoneNumberController: ${phoneNumberController.text}');
-
     if (text.isEmpty) {
       if (phoneNumberController.text.isNotEmpty) {
         phoneNumberController.text = '';
@@ -75,11 +71,7 @@ class AccountSettingsModel with ChangeNotifier {
     bool startsWithSevenOrPlus = text.startsWith("7") || text.startsWith("+");
     if (!startsWithEight) {
       text = "+7${text.substring(1)}";
-      log('777: $text');
-    } else {
-      log('888: $text');
     }
-
 
     if (startsWithEight && text.length > 11) {
       text = text.substring(0, 11);
