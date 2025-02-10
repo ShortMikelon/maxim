@@ -152,13 +152,13 @@ class _AccountSettingsDisplayBody extends StatelessWidget {
         Column(
           children: <Widget>[
             _AccountSettingsInputField(
-              label: 'Имя',
+              label: AppStringResources.name,
               controller: usernameController,
               focusNode: usernameFocusNode,
             ),
             const SizedBox(height: 8),
             _AccountSettingsInputField(
-              label: 'Телефонный номер',
+              label: AppStringResources.phoneNumber,
               controller: phoneNumberController,
               focusNode: phoneNumberFocusNode,
               keyboardType: TextInputType.phone,
@@ -183,7 +183,7 @@ class _AccountSettingsDisplayBody extends StatelessWidget {
           onPressed: onSaveButtonPressed,
           child: const Align(
             alignment: Alignment.center,
-            child: Text('Сохранить', style: TextStyle(color: Colors.white)),
+            child: Text(AppStringResources.save, style: TextStyle(color: Colors.white)),
           ),
         ),
       ],
@@ -258,7 +258,7 @@ class _AccountSettingsPasswordButton extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Expanded(
-              child: Text('Пароль', style: AppTextStyles.mainTextStyle),
+              child: Text(AppStringResources.password, style: AppTextStyles.mainTextStyle),
             ),
             Icon(
               Icons.arrow_forward_ios,
@@ -290,7 +290,7 @@ class _AccountSettingsProfessionButton extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const Text('Профессия', style: AppTextStyles.mainTextStyle),
+                const Text(AppStringResources.profession, style: AppTextStyles.mainTextStyle),
                 Text(profession, style: AppTextStyles.hintTextStyle),
               ],
             ),

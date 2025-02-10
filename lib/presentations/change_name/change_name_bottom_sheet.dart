@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:maxim/app_string_resources.dart';
 import 'package:maxim/change_client_name_constants.dart';
 import 'package:maxim/presentations/change_name/change_name_provider.dart';
 import 'package:maxim/presentations/change_name/name_type.dart';
@@ -142,7 +143,7 @@ class _AppSaveButton extends StatelessWidget {
         background: ChangeClientNameConstants.blue,
         disabledBackground: ChangeClientNameConstants.spitsbergenBlue,
         child: Text(
-          'Сохранить',
+          AppStringResources.save,
           style: TextStyle(
             color:
             isEnabled ? Colors.white : ChangeClientNameConstants.lightGray,

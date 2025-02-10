@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:maxim/app_string_resources.dart';
 import 'package:maxim/presentations/change_password/change_password_model.dart';
 import 'package:maxim/widgets/app_button.dart';
 import 'package:maxim/widgets/app_text_styles.dart';
@@ -35,7 +36,7 @@ class _ChangePasswordBody extends StatelessWidget {
           if (model.passwordSavedIsCorrect) {
             SchedulerBinding.instance.addPostFrameCallback((_) {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("Пароль поменялся"), duration: Duration(seconds: 1)),
+                const SnackBar(content: Text(AppStringResources.passwordSuccessChanged), duration: Duration(seconds: 1)),
               );
               Navigator.pop(context);
             });
@@ -57,13 +58,13 @@ class _ChangePasswordBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const Text(
-                      'Изменить пароль',
+                      AppStringResources.changePassword,
                       style: AppTextStyles.boldTextStyle,
                       textAlign: TextAlign.start,
                     ),
                     const SizedBox(height: 8),
                     _ChangePasswordField(
-                      label: 'Старый пароль',
+                      label: AppStringResources.oldPassword,
                       helper: model.oldPasswordHelper,
                       changeVisibility: () {
                         model.onChangeFieldVisibility(
@@ -73,7 +74,7 @@ class _ChangePasswordBody extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     _ChangePasswordField(
-                      label: 'Новый пароль',
+                      label: AppStringResources.newPassword,
                       helper: model.newPasswordHelper,
                       changeVisibility: () {
                         model.onChangeFieldVisibility(
@@ -83,7 +84,7 @@ class _ChangePasswordBody extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     _ChangePasswordField(
-                      label: 'Подтвердить пароль',
+                      label: AppStringResources.repeatPassword,
                       helper: model.repeatPasswordHelper,
                       changeVisibility: () {
                         model.onChangeFieldVisibility(
@@ -118,7 +119,7 @@ class _ChangePasswordBody extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text(
-                          'Сохранить',
+                          AppStringResources.save,
                           style: TextStyle(
                             color: model.saveButtonIsEnabled
                                 ? Colors.white

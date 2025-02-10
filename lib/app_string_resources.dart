@@ -13,4 +13,17 @@ class AppStringResources {
   static const shareWithFriend = 'Поделиться с другом';
   static const syncWithCalendar = 'Cинхронизация с календарем';
   static const freezingAllClient = 'Заморозка всех клиентов';
+
+  static const save = 'Сохранить';
+  static const profession = 'Профессия';
+  static const phoneNumber = 'Телефонный номер';
+  static const name = 'Имя';
+  static const password = 'Пароль';
+
+  static const passwordSuccessChanged = 'Пароль поменялся';
+  static const changePassword = 'Изменить пароль';
+  static const oldPassword = 'Старый пароль';
+  static const newPassword = 'Новый пароль';
+  static const repeatPassword = 'Подтвердить пароль';
+
 }
